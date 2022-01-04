@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Livewire\Admin\Constructor\Offer;
 use App\Models\Fashion;
 use App\Models\Gender;
 use App\Models\Raw;
@@ -39,7 +40,6 @@ class TablesController extends Controller
 
     public function fashions(int $parent_id)
     {
-
         $model_parent = Template::query()->whereId($parent_id)->with('template_group.gender')->get();
 
 //        dd($model_parent);
@@ -55,11 +55,14 @@ class TablesController extends Controller
         $model_parent = Fashion::query()->whereId($parent_id)->with(['template.template_group.gender', 'raws.raw_type'])
             ->get();
 
+        $parent_name = 'Ссылка уже удалена';
+        if ($model_parent[0]->raws->count()>0)
+            $parent_name = "{$model_parent[0]->raws[0]->raw_type->name}: Фасон №{$model_parent[0]->id}";
+
 //        dd($model_parent);
         return view('admin.tables.items', [
             'model_parent' => $model_parent,
-            'parent_name' => "{$model_parent[0]->raws[0]->raw_type->name}: {$model_parent[0]->raws[0]->name}"
-
+            'parent_name' => $parent_name
         ]);
     }
 

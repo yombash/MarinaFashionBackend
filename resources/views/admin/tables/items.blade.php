@@ -8,9 +8,6 @@
     <!--Internal  Bootstrap -->
     <link href="{{URL::asset('assets/plugins/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
 
-    <!--Internal  treeview -->
-    <link href="{{URL::asset('assets/plugins/treeview/treeview.css')}}" rel="stylesheet" type="text/css" />
-
 @endsection
 
 @section('breadcrumb')
@@ -33,7 +30,7 @@
                 </li>
                 <li class="breadcrumb-item">
                     <a href="{{url('admin/tables/fashions/'.$model_parent[0]->template->id)
-                    }}">{{$model_parent[0]->raws[0]->raw_type->name}}: {{$model_parent[0]->raws[0]->name}}</a>
+                    }}">{{$parent_name}}</a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">Готовые изделия (размеры фасонов)</li>
             </ol>
@@ -55,7 +52,7 @@
                     <p class="mg-b-20 card-sub-title tx-12 text-muted">в привязке к фасону:
                       {{$model_parent[0]->template->template_group->gender->name}} /
                         {{$model_parent[0]->template->template_group->name}} / {{$model_parent[0]->template->name}} /
-                        {{$model_parent[0]->raws[0]->raw_type->name}}: {{$model_parent[0]->raws[0]->name}}</p>
+                        {{$parent_name}}</p>
                     <div class="row">
                         <!-- col -->
                         <div class="col-lg-4">

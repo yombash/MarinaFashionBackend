@@ -29,11 +29,18 @@ class Offers extends Component
 
     public function render()
     {
+
+        $offers = Offer::query()
+            ->with('products.items.fashion','products.price_latest')
+            ->orderBy('name')->latest()
+            ->paginate(20);
+
+        dd(Offer::offer_card($offers));
+
         return view('livewire.admin.crud.offers', [
-            'offers' => Offer::query()->orderBy('name')->latest()
-                ->paginate(20),
+            'offers' => $offers,
             'product_list' => $this->product_list,
-            'hierarchy' => $this->toHierarchy()
+//            'hierarchy' => $this->toHierarchy()
         ]);
     }
 
@@ -50,14 +57,17 @@ class Offers extends Component
         $this->offer = null;
         $this->offerId = null;
         $this->product_list = Product::query()
-        ->withCount('offers')
-        ->with('price_latest',
-            'items.size',
-            'items.fashion.template.template_group.gender',
-            'items.fashion.raws.raw_type')
-        ->get();
+            ->doesntHave('offers')
+//            ->withCount('offers')
+            ->withCount('items')
+            ->with('price_latest',
+                'items.size',
+                'items.fashion.template.template_group.gender',
+                'items.fashion.raws.raw_type',
+                'items.fashion.media')
+            ->get();
 //        dd($this->product_list);
-        dd($this->toHierarchy());
+//        dd($this->toHierarchy());
         $this->checked = null;
 
     }
@@ -65,15 +75,14 @@ class Offers extends Component
     public function save()
     {
 
-        dd($this->checked);
+//        dd($this->checked);
+
+        if (!is_array($this->checked)) return false;
 
         $this->validate();
-
-        if (!is_null($this->offerId)) {
-            $this->offer->save();
-        } else {
-            Offer::create($this->offer);
-        }
+        $offer = Offer::create();
+        foreach ($this->checked as $product_id => $value)
+            $offer->products()->attach($product_id);
         $this->showModal = false;
     }
 
@@ -84,23 +93,46 @@ class Offers extends Component
 
     public function delete(Offer $offer)
     {
+        $offer->products()->detach();
         if ($offer) $offer->delete();
+        $this->showModal = false;
     }
 
-    private function toHierarchy() {
+    /*
+     * Форматирование списка нераспределённых продуктов
+     * в виде группированных карточек
+     * для формирования товарных предложений
+     */
+    private function toHierarchy()
+    {
         $res = [];
-        foreach ($this->product_list as $product)
-            foreach ($product->items as $item)
-                {
-                $res
-                [$item->fashion->template->template_group->gender->name]
-                [$item->fashion->template->template_group->name]
-                [$item->fashion->template->name]
-                [$item->fashion->id]
-                = $item->id;
+        foreach ($this->product_list as $product) {
 
+            // TODO: Доделать случай комплектов товаров
+            // пока что обрабатывается только случай товаров-одиночек
+            if ($product->items_count > 1) continue;
+            foreach ($product->items as $item) {
+                unset($raw_array);
+                $raw_array[$item->fashion->id] = [];
+                foreach ($item->fashion->raws as $raw) {
+                    $raw_array[$item->fashion->id][$raw->raw_type->name] = $item->fashion->getFirstThumbUrl();
+                }
+
+
+//                dd($raw_array);
+
+//                $res
+//                [$item->fashion->template->template_group->gender->name]
+//                [$item->fashion->template->template_group->name]
+//                [$item->fashion->template->name]
+//                [$item->fashion->id]
+//                    = [
+//                    'raw'
+//                    [$item->id]
+//                        = $product->id;]
             }
+        }
 //dd($res);
-            return $res;
+        return $res;
     }
 }

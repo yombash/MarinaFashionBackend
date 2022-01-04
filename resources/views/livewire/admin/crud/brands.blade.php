@@ -24,7 +24,7 @@
                 </td>
                 <td nowrap="">
                     <a wire:click.prevent="edit({{ $brand->id }})"
-                       href="#" class="btn btn-sm btn-primary">Изменить</a>
+                       href="#" class="btn btn-sm btn-warning">Изменить</a>
                     <button wire:click.prevent="delete({{ $brand->id }})"
                             onclick="confirm('Вы уверены?') || event.stopImmediatePropagation()"
                             class="btn btn-sm btn-danger">Удалить
@@ -64,7 +64,7 @@
 
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary">{{ $brandId ? 'Сохранить изменения' :
+                        <button type="submit" class="btn btn-success">{{ $brandId ? 'Сохранить изменения' :
                         'Сохранить'
                         }}</button>
                         <button wire:click="close" type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть

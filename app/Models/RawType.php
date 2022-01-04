@@ -12,8 +12,13 @@ class RawType extends Model implements HasMedia
     use HasFactory, InteractsWithMedia;
 
     protected $fillable = [
-      'name'
+        'name'
     ];
+
+    public function raws()
+    {
+        return $this->hasMany(Raw::class);
+    }
 
     public function mesure()
     {

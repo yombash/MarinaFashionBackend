@@ -41,7 +41,11 @@
             <div class="modal-content">
                 <form wire:submit.prevent="save">
                     <div class="modal-header">
-                        <h5 class="modal-title">Добавление нового размера</h5>
+                        <h5 class="modal-title">Добавление нового размера
+                            <a wire:click="close" href="{{url('/admin/tables/sizes')}}" class="btn btn-primary"
+                               target="_blank">Добавить новый
+                                размер</a>
+                        </h5>
 
                         <button wire:click="close" type="button" class="close" data-dismiss="modal"
                                 aria-label="Закрыть">
@@ -65,8 +69,9 @@
                         </select>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary">{{ $productId ? 'Сохранить изменения' :
-                        'Сохранить'
+
+                        <button type="submit" class="btn btn-success">{{ $productId ? 'Сохранить изменения' :
+                        'Выбрать из списка'
                         }}</button>
                         <button wire:click="close" type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть
                         </button>

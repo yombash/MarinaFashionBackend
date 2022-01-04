@@ -15,7 +15,7 @@
 
 @section('breadcrumb')
     <div class="left-content">
-        <h4 class="content-title mb-2">Администрирование сайта</h4>
+        <h4 class="content-title mb-2">Товарные предложения</h4>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{url('admin')}}">Главная</a></li>
@@ -33,11 +33,11 @@
         <div class="col-md-12">
             <div class="card mg-b-20">
                 <div class="card-body">
-                    <div class="main-content-label mg-b-5">
-                        Товарные предложения
-                    </div>
-                    <p class="mg-b-20 card-sub-title tx-12 text-muted">Заполните, пожалуйста, список товарных
-                        предложений</p>
+{{--                    <div class="main-content-label mg-b-5">--}}
+{{--                        Товарные предложения--}}
+{{--                    </div>--}}
+{{--                    <p class="mg-b-20 card-sub-title tx-12 text-muted">Заполните, пожалуйста, список товарных--}}
+{{--                        предложений</p>--}}
                     <div class="row">
                         <!-- col -->
                         <div class="col-lg-4">

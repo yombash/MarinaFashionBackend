@@ -1,0 +1,52 @@
+.img-wrap {
+    position: relative;
+    left: 0;
+}
+
+.img-wrap h1 {
+    position: absolute;
+    left: 0;
+    top: 1rem;
+    font-size: 14pt;
+    background: rgba(246, 246, 246, 0.8); /* Полупрозрачный фон */
+    padding: 0.3rem; /* Поля вокруг текста */
+    border-radius: 5px; /* Радиус скругления */
+    max-width: 6rem;
+    text-align: center;
+}
+
+.img-wrap h2 {
+    position: absolute;
+    left: 0;
+    bottom: 5rem;
+    font-size: 12pt;
+    background: rgba(255, 255, 255, 0.8); /* Полупрозрачный фон */
+    padding: 1rem; /* Поля вокруг текста */
+    border-radius: 5px; /* Радиус скругления */
+}
+
+.img-wrap h3 {
+    position: absolute;
+    right: 0;
+    top: 1rem;
+    font-size: 12pt;
+    /*background: rgba(255, 255, 255, 0.8); !* Полупрозрачный фон *!*/
+    /*padding: 1rem; !* Поля вокруг текста *!*/
+    /*border-radius: 5px; !* Радиус скругления *!*/
+}
+
+.img-wrap button {
+    position: absolute;
+    right: 0;
+    bottom: 1rem;
+    font-size: 12pt;
+    /*background: rgba(255, 255, 255, 0.8); !* Полупрозрачный фон *!*/
+    /*padding: 1rem; !* Поля вокруг текста *!*/
+    /*border-radius: 5px; !* Радиус скругления *!*/
+}
+
+.img-thumb-zoom {
+    background: rgba(255, 255, 255, 0.8); /* Полупрозрачный фон */
+    padding: 1rem; /* Поля вокруг текста */
+    border-radius: 5px; /* Радиус скругления */
+}

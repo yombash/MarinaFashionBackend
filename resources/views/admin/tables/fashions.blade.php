@@ -8,9 +8,6 @@
     <!--Internal  Bootstrap -->
     <link href="{{URL::asset('assets/plugins/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
 
-    <!--Internal  treeview -->
-    <link href="{{URL::asset('assets/plugins/treeview/treeview.css')}}" rel="stylesheet" type="text/css" />
-
 @endsection
 
 @section('breadcrumb')
@@ -20,7 +17,7 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{url('admin')}}">Главная</a></li>
                 <li class="breadcrumb-item">
-                    <a href="{{url('admin/tables/genders')
+                    <a href="{{route('admin.tables.genders')
                     }}">{{$model_parent[0]->template_group->gender->name}}</a>
                 </li>
                 <li class="breadcrumb-item">
@@ -69,10 +66,5 @@
 
 @section('scripts')
 
-    <!--Internal  Perfect-scrollbar js -->
-    <script src="{{URL::asset('assets/plugins/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
-
-    <!-- Internal Treeview js -->
-    <script src="{{URL::asset('assets/plugins/treeview/treeview.js')}}"></script>
 
 @endsection

@@ -8,32 +8,38 @@
         </tr>
         </thead>
         <tbody>
-        @forelse ($products as $product)
+        @forelse ($fashions as $fashion)
             <tr>
-                <td nowrap=""><h6><a href="{{url('/admin/tables/items/'.$product->id)}}"> Фасон
-                            №{{$product->id}}</a></h6>
-                    @foreach($product->raws as $raw)
-                        <li>{{$raw->raw_type->name}}: {{$raw->name}}
-                            @if ($raw->pivot->qty > 0)
-                                 ({{$raw->pivot->qty}} {{$raw->raw_type->mesure->name}})
+                <td nowrap=""><h6><a href="{{url('/admin/tables/items/'.$fashion->id)}}">
+                            @if ($fashion->raws->count()>0)
+                                {{$fashion->raws->first()->raw_type->name}}
+
+                                @if (!empty($fashion->raws->first()->name))
+                                    {{$fashion->raws->first()->name}}
+                                @endif
+                                :
                             @endif
-                        </li>
-                    @endforeach
-                    @if ($product->media)
-                        @foreach($product->getMedia('images') as $image)
-                            <li><img src="{{$image->getUrl('thumb')}}"> <button wire:click.prevent="deleteImage({{ $image->id }})"
-                                                   onclick="confirm('Вы уверены?') || event.stopImmediatePropagation()"
-                                                   class="btn btn-sm btn-danger">Удалить изображение</button></li>
+                            Фасон
+                            №{{$fashion->id}}</a></h6>
+                    @if ($fashion->media)
+                        @foreach($fashion->getMedia('images') as $image)
+                            <li><img src="{{$image->getUrl('thumb')}}">
+                                <button wire:click.prevent="deleteImage({{ $image->id }})"
+                                        onclick="confirm('Вы уверены?') || event.stopImmediatePropagation()"
+                                        class="btn btn-sm btn-danger">Удалить фото
+                                </button>
+                            </li>
                         @endforeach
                     @endif
                 </td>
                 <td nowrap="">
-                    <a wire:click.prevent="editPhoto({{ $product->id }})"
+                    <a wire:click.prevent="editPhoto({{ $fashion->id }})"
                        href="#" class="btn btn-sm btn-success">Добавить фото </a>
-                    <a href="{{url('/admin/tables/fashions_details/'.$product->id)}}" class="btn btn-sm btn-primary">Изменить</a>
-                    <button wire:click.prevent="delete({{ $product->id }})"
+                    {{--                    <a href="{{url('/admin/tables/fashions_details/'.$fashion->id)}}" class="btn btn-sm btn-primary">Изменить</a>--}}
+                    <button wire:click.prevent="delete({{ $fashion->id }})"
                             onclick="confirm('Вы уверены?') || event.stopImmediatePropagation()"
-                            class="btn btn-sm btn-danger">Удалить</button>
+                            class="btn btn-sm btn-danger">Удалить фасон
+                    </button>
                 </td>
             </tr>
         @empty
@@ -50,8 +56,13 @@
             <div class="modal-content">
                 <form wire:submit.prevent="save">
                     <div class="modal-header">
-                        <h5 class="modal-title">{{ $productId ? 'Редактирование' : 'Добавление нового фасона'
-                        }}</h5>
+                        <h5 class="modal-title">{{ $fashionId ? 'Редактирование' : 'Добавление нового фасона'
+                        }}
+                            <a wire:click="close" href="{{route('admin.tables.raw_types')}}" class="btn btn-primary"
+                               onclick="return confirm
+                            ('Перейти в форму добавления новых метериалов?');" target="_blank">Добавить новый
+                                материал (если нет в списке)</a>
+                        </h5>
 
                         <button wire:click="close" type="button" class="close" data-dismiss="modal"
                                 aria-label="Закрыть">
@@ -59,23 +70,28 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <h6 >В привязке к модели: {{$parentName}}</h6>
+                        <h6>В привязке к модели: {{$parentName}}</h6>
                         <label for="raws">Наименование:</label>
                         <br/>
-                        <select wire:model.prevent="raw.id" class="form-control" id="raws">
-                            <option hidden>-- Выберите материал -- </option>
-                        @forelse($raws as $raw)
-                            <option value="{{$raw->id}}">{{$raw->raw_type->name}}: {{$raw->name}}</option>
+
+
+                        <select wire:model.prevent="raw_type.id" class="form-control" id="raws">
+                            <option hidden>-- Выберите материал --</option>
+                            @forelse($raw_types as $raw_type)
+                                <option value="{{$raw_type->id}}">
+                                    {{$raw_type->name}}
+                                </option>
                             @empty
-                            <option disabled>Нет вариантов сырья</option>
-                        @endforelse
-                        @error('product.name')
-                        <div style="font-size: 11px; color: red">{{ $message }}</div>
-                        @enderror
+                                <option disabled>Нет вариантов сырья</option>
+                            @endforelse
+                            @error('fashion.name')
+                            <div style="font-size: 11px; color: red">{{ $message }}</div>
+                            @enderror
                         </select>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary">{{ $productId ? 'Сохранить изменения' :
+
+                        <button type="submit" class="btn btn-success">{{ $fashionId ? 'Сохранить изменения' :
                         'Сохранить'
                         }}</button>
                         <button wire:click="close" type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть
@@ -90,7 +106,7 @@
     <div class="modal" @if ($showModalPhoto) style="display:block" @endif>
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <form wire:submit.prevent="uplodeImage({{ $productId }})" >
+                <form wire:submit.prevent="uplodeImage({{ $fashionId }})">
                     <div class="modal-header">
                         <h5 class="modal-title">Добавление фото к фасону</h5>
 
@@ -100,27 +116,27 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <h6 >В привязке к фасону: №{{$productId}}</h6>
-                        <label for="raws">Наименование:</label>
+                        <h6>В привязке к фасону: №{{$fashionId}}</h6>
+                        <label for="raw_types">Наименование:</label>
                         <br/>
 
-                        @if ($productId)
+                        @if ($fashionId)
 
-                                <div class="modal-footer">
-                                    <input type="file" wire:model="image" class="form-control"/>
-                                    @error('image')
-                                    <div style="font-size: 11px; color: red">{{ $message }}</div>
-                                    @enderror
+                            <div class="modal-footer">
+                                <input type="file" wire:model="image" class="form-control"/>
+                                @error('image')
+                                <div style="font-size: 11px; color: red">{{ $message }}</div>
+                                @enderror
 
-                                </div>
+                            </div>
                         @endif
 
-                            @error('image')
-                            <div style="font-size: 11px; color: red">{{ $message }}</div>
-                            @enderror
+                        @error('image')
+                        <div style="font-size: 11px; color: red">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary">{{ $productId ? 'Загрузить изображение' :
+                        <button type="submit" class="btn btn-primary">{{ $fashionId ? 'Загрузить изображение' :
                         'Сохранить'
                         }}</button>
                         <button wire:click="closePhoto" type="button" class="btn btn-secondary"

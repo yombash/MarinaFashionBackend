@@ -26,9 +26,7 @@ class Product extends Model
     public function prices()
     {
         return $this->hasMany(Price::class)
-//            ->orderByDesc('created_at')
-            ->latest('created_at')
-            ;
+            ->latest('created_at');
     }
 
     public function price_latest()

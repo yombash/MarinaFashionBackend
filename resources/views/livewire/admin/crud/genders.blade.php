@@ -10,7 +10,8 @@
         <tbody>
         @forelse ($genders as $gender)
             <tr>
-                <td><a href="{{url('admin/tables/template_groups/'.$gender->id)}}"> {{ $gender->name }}</a></td>
+                <td><a class="btn btn-success" href="{{url('admin/tables/template_groups/'.$gender->id)}}"> {{
+                $gender->name }}</a></td>
                 <td nowrap="">
                     <a wire:click.prevent="edit({{ $gender->id }})"
                        href="#" class="btn btn-sm btn-primary">Изменить</a>

@@ -10,7 +10,7 @@
     <meta name="Keywords" content="платья оптом, сарафаны оптом,  трикотаж оптом, сорочки оптом, халаты оптом"/>
 
     <!-- Title -->
-    <title>Халаты оптом от производителя MarinaFashion</title>
+    <title>Халаты оптом от производителя MarinaFashion </title>
 
     @include('layouts.horizontalmenu.styles')
     @livewireStyles
@@ -24,7 +24,7 @@
 </div>
 <!-- /Loader -->
 
-@include('layouts.horizontalmenu.main-header')
+{{--@include('layouts.horizontalmenu.main-header')--}}
 
 @include('layouts.horizontalmenu.horizontal-main')
 
@@ -35,11 +35,11 @@
     <div class="container">
 
         <!-- breadcrumb -->
-        <div class="breadcrumb-header justify-content-between mg-lg-t-0 mg-lg-b-50">
+{{--        <div class="breadcrumb-header justify-content-between mg-lg-t-0 mg-lg-b-50">--}}
 
-            @yield('breadcrumb')
+{{--            @yield('breadcrumb')--}}
 
-        </div>
+{{--        </div>--}}
         <!-- breadcrumb -->
 
         @yield('content')

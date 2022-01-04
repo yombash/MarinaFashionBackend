@@ -10,13 +10,13 @@
         <tbody>
         @forelse ($products as $product)
             <tr>
-                <td><a href="{{url('/admin/tables/raws/'.$product->id)}}">
+                <td><a class="btn btn-success" href="{{url('/admin/tables/raws/'.$product->id)}}">
                         {{ $product->name }}
                     </a>
                 </td>
                 <td nowrap="">
                     <a wire:click.prevent="edit({{ $product->id }})"
-                       href="#" class="btn btn-sm btn-primary">Изменить</a>
+                       href="#" class="btn btn-sm btn-warning">Изменить</a>
                     <button wire:click.prevent="delete({{ $product->id }})"
                             onclick="confirm('Вы уверены?') || event.stopImmediatePropagation()"
                             class="btn btn-sm btn-danger">Удалить</button>
@@ -55,7 +55,7 @@
 
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary">{{ $productId ? 'Сохранить изменения' :
+                        <button type="submit" class="btn btn-success">{{ $productId ? 'Сохранить изменения' :
                         'Сохранить'
                         }}</button>
                         <button wire:click="close" type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть

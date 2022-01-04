@@ -1,90 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="e2e29c61-eb9f-403d-b294-21e4a26119cc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/IndexController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/TablesController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Site/IndexController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Site/OffersController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Site/ProductDetailsController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Admin/Constructor/Offer.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Admin/Crud/Brands.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Admin/Crud/Fashions.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Admin/Crud/Genders.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Admin/Crud/Items.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Admin/Crud/Offers.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Admin/Crud/RawTypes.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Admin/Crud/Raws.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Admin/Crud/Sizes.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Admin/Crud/TemplateGroups.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Admin/Crud/Templates.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Brand.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Category.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Fashion.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Gender.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Item.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Mesure.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Offer.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Price.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/PriceType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Raw.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/RawType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Size.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Template.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/TemplateGroup.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Providers/ViewComposerServiceProvider.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Repositories/Contracts/BasketRepositoryContract.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Repositories/Sessions/BasketRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/helpers.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/media-library.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_05_19_123216_create_media_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_05_19_123743_create_jobs_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/constructors/offer.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/tables/brands.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/tables/fashions.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/tables/genders.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/tables/items.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/tables/offers.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/tables/raw-types.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/tables/raws.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/tables/sizes.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/tables/template_groups.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/tables/templates.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/verticalmenuadmin/footer.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/verticalmenuadmin/main-header.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/verticalmenuadmin/main-sidebar.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/verticalmenuadmin/scripts.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/verticalmenuadmin/sidebar-right.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/verticalmenuadmin/styles.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/admin/constructor/offer.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/admin/crud/brands.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/admin/crud/fashions.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/admin/crud/genders.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/admin/crud/items.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/admin/crud/offers.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/admin/crud/raw-types.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/admin/crud/raws.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/admin/crud/sizes.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/admin/crud/template-groups.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/admin/crud/templates.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Console/Offers/GenerateOffersCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Admin/Crud/Price/Filter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Admin/Crud/Price/Web.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Shop/Auth/Create.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Shop/Auth/Forgot.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Shop/Auth/Login.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Shop/Cart/BasketButton.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Shop/Cart/BasketItem.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Shop/Cart/ClearButton.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Shop/Catalog/Card.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Shop/Catalog/Filter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Shop/Catalog/ModalProductDetails.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Shop/Catalog/Offer/Details.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Shop/Catalog/Offers.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Shop/Checkout/Basket.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Shop/Checkout/Payment.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Shop/Checkout/Shipping.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Shop/Index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Repositories/Contracts/CheckoutRepositoryContract.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Repositories/Sessions/CheckoutRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/css/user.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/lang/ru/pagination.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/tables/categories.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/tables/price/web.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/emails/new-order.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/emails/testmail.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layouts/app_vertical.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/livewire/shop/auth/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/livewire/shop/auth/forgot.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/livewire/shop/auth/login.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/livewire/shop/cart/basket-button.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/livewire/shop/cart/basket-item.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/livewire/shop/cart/clear-button.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/livewire/shop/catalog/card.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/livewire/shop/catalog/filter.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/livewire/shop/catalog/modal-product-details.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/livewire/shop/catalog/offer/details.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/livewire/shop/catalog/offers.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/livewire/shop/checkout/basket.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/livewire/shop/checkout/payment.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/livewire/shop/checkout/shipping.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/livewire/shop/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/shop/basket.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/shop/checkout.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/shop/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/shop/offer/details.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/TablesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/TablesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Admin/Crud/Fashions.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Admin/Crud/Fashions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Admin/Crud/Items.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Admin/Crud/Items.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Admin/Crud/Offers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Admin/Crud/Offers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Fashion.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Fashion.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Offer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Offer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Price.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Price.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/RawType.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/RawType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Template.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Template.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/ViewComposerServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/ViewComposerServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Contracts/BasketRepositoryContract.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Contracts/BasketRepositoryContract.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Sessions/BasketRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Sessions/BasketRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/helpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/auth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en/pagination.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/pagination.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en/passwords.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/passwords.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en/validation.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/validation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/tables/fashions.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/tables/fashions.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/tables/items.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/tables/items.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/tables/offers.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/tables/offers.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/verticalmenuadmin/main-sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/verticalmenuadmin/main-sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/admin/crud/brands.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/admin/crud/brands.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/admin/crud/fashions.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/admin/crud/fashions.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/admin/crud/genders.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/admin/crud/genders.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/admin/crud/items.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/admin/crud/items.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/admin/crud/offers.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/admin/crud/offers.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/admin/crud/raw-types.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/admin/crud/raw-types.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -98,6 +96,13 @@
       <executable path="composer" />
     </execution>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -108,6 +113,12 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="acb0f80d-d1c5-4835-98f5-aa0cbb6a0859" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -232,6 +243,8 @@
       <path value="$PROJECT_DIR$/app" />
       <path value="$PROJECT_DIR$/vendor/bennett-treptow/laravel-migration-generator" />
       <path value="$PROJECT_DIR$/vendor/laravel/helpers" />
+      <path value="$PROJECT_DIR$/vendor/mtolhuys/laravel-schematics" />
+      <path value="$PROJECT_DIR$/vendor/spatie/laravel-query-builder" />
     </include_path>
   </component>
   <component name="ProjectId" id="1s6kys4vHFuz737vwoJqDOJQ9xT" />
@@ -252,7 +265,8 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Livewire/Admin/Crud" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/admin/tables" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -264,11 +278,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Professional\PhpstormProjects\MarinaFashion2021.DEV\app\Http\Livewire\Admin\Crud" />
       <recent name="C:\Users\Professional\PhpstormProjects\MarinaFashion2021.DEV\resources\views\admin\tables" />
-      <recent name="C:\Users\Professional\PhpstormProjects\MarinaFashion2021.DEV\resources\views\layouts" />
-      <recent name="C:\Users\Professional\PhpstormProjects\MarinaFashion2021.DEV\resources\views\livewire" />
-      <recent name="C:\Users\Professional\PhpstormProjects\MarinaFashion2021.DEV" />
+      <recent name="C:\Users\Professional\PhpstormProjects\MarinaFashion2021.DEV\resources\views\shop" />
+      <recent name="C:\Users\Professional\PhpstormProjects\MarinaFashion2021.DEV\resources\lang\ru" />
+      <recent name="C:\Users\Professional\PhpstormProjects\MarinaFashion2021.DEV\resources\views\admin\tables\price" />
+      <recent name="C:\Users\Professional\PhpstormProjects\MarinaFashion2021.DEV\resources\views\livewire\admin\crud" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Professional\PhpstormProjects\MarinaFashion2021.DEV\app\Http\Controllers\Site" />
@@ -310,12 +324,36 @@
       <workItem from="1622917343442" duration="35250000" />
       <workItem from="1623154863117" duration="17000" />
       <workItem from="1623154934211" duration="738000" />
-      <workItem from="1623330487386" duration="23192000" />
+      <workItem from="1623330487386" duration="54156000" />
+      <workItem from="1623867946191" duration="12471000" />
+      <workItem from="1624199238724" duration="1507000" />
+      <workItem from="1625423849110" duration="264000" />
+      <workItem from="1626537344852" duration="61063000" />
+      <workItem from="1626786257949" duration="13529000" />
+      <workItem from="1628166036851" duration="14909000" />
+      <workItem from="1630608045682" duration="434000" />
+      <workItem from="1633521687088" duration="34908000" />
+      <workItem from="1634050517627" duration="2027000" />
+      <workItem from="1641189642359" duration="13000" />
+      <workItem from="1641292020753" duration="660000" />
+      <workItem from="1641294830068" duration="6762000" />
     </task>
+    <task id="LOCAL-00001" summary="Админка в процессе">
+      <created>1623364992295</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1623364992295</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Админка в процессе" />
+    <option name="LAST_COMMIT_MESSAGE" value="Админка в процессе" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

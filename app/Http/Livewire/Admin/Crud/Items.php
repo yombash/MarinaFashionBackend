@@ -8,6 +8,7 @@ use App\Models\Product;
 use App\Models\Raw;
 use App\Models\Set;
 use App\Models\Size;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -49,7 +50,6 @@ class Items extends Component
                         $query->orderBy('name');
                     }
                 ])
-                ->orderBy('id')
                 ->latest()
                 ->paginate(20),
             'sizes'  =>  Size::query()

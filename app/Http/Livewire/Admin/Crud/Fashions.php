@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Admin\Crud;
 
 use App\Models\Fashion;
 use App\Models\Raw;
+use App\Models\RawType;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\DB;
 use Livewire\Component;
@@ -19,9 +20,9 @@ class Fashions extends Component
 
     public $showModal = false;
     public $showModalPhoto = false;
-    public $productId;
-    public $product;
-    public $raw;
+    public $fashionId;
+    public $fashion;
+    public $raw_type;
     public $parentId;
     public $parentName;
     public $image;
@@ -31,7 +32,7 @@ class Fashions extends Component
     public $designTemplate = 'tailwind';
 
     protected $rules = [
-        'raw.id' => 'required',
+        'raw_type.id' => 'required',
     ];
 
     public function mount(int $parentId, string $parentName)
@@ -44,14 +45,13 @@ class Fashions extends Component
     {
 
         return view('livewire.admin.crud.fashions', [
-            'products' => Fashion::query()
-                ->where('template_id','=',$this->parentId)
-                ->with(['raws.raw_type.mesure','template','media'])
+            'fashions' => Fashion::query()
+                ->where('template_id', '=', $this->parentId)
+                ->with(['template', 'media', 'raws.raw_type'])
                 ->orderByDesc('id')
 //                ->latest()
-            ->paginate(20),
-            'raws'  =>  Raw::query()
-                ->with('raw_type')
+                ->paginate(20),
+            'raw_types' => RawType::query()
                 ->orderBy('name')
                 ->get()
         ]);
@@ -60,8 +60,8 @@ class Fashions extends Component
     public function create()
     {
         $this->showModal = true;
-        $this->product = [ 'template_id' => $this->parentId ];
-        $this->productId = null;
+        $this->fashion = ['template_id' => $this->parentId];
+        $this->fashionId = null;
     }
 
 //    public function edit($productId)
@@ -73,20 +73,21 @@ class Fashions extends Component
 
     public function save()
     {
-
-//        dd($this);
         $this->validate();
 
-
-
-        if (!is_null($this->productId)) {
-            $this->product->save();
+        if (!is_null($this->fashionId)) {
+            $this->fashion->save();
         } else {
-            $fashion = Fashion::create($this->product);
-            $fashion->raws()->attach($this->raw['id']);
+            $fashion = Fashion::create($this->fashion);
+            if (!($raw = Raw::query()->whereNull('name')->where('raw_type_id',$this->raw_type['id'])->first()))
+                $raw = Raw::create([
+                    'name' => null,
+                    'raw_type_id' => $this->raw_type['id']
+                ]);
+            $fashion->raws()->attach($raw->id);
         }
         $this->showModal = false;
-        $this->raw = null;
+        $this->raw_type = null;
     }
 
     public function close()
@@ -94,13 +95,13 @@ class Fashions extends Component
         $this->showModal = false;
     }
 
-    public function delete($productId)
+    public function delete($fashionId)
     {
-        $product = Fashion::find($productId);
-        if ($product) {
-                $res_delete['product'] = $product->delete();
-                $res_delete['raws'] = $product->raws()->detach();
-                $product->media()->delete();
+        $fashion = Fashion::find($fashionId);
+        if ($fashion) {
+            $fashion->media()->delete();
+            $res_delete['raw_types'] = $fashion->raws()->detach();
+            $res_delete['fashion'] = $fashion->delete();
 
         }
 
@@ -110,12 +111,12 @@ class Fashions extends Component
      * Photo
      */
 
-    public function editPhoto($productId)
+    public function editPhoto($fashionId)
     {
 //        $this->showModal = true;
         $this->showModalPhoto = true;
-        $this->productId = $productId;
-        $this->product = Fashion::find($productId);
+        $this->fashionId = $fashionId;
+        $this->fashion = Fashion::find($fashionId);
     }
 
     public function savePhoto()
@@ -127,15 +128,14 @@ class Fashions extends Component
         ]);
 
 
-
-        if (!is_null($this->productId)) {
-            $this->product->save();
+        if (!is_null($this->fashionId)) {
+            $this->fashion->save();
         } else {
-            $fashion = Fashion::create($this->product);
-            $fashion->raws()->attach($this->raw['id']);
+            $fashion = Fashion::create($this->fashion);
+            $fashion->raw_types()->attach($this->raw_type['id']);
         }
         $this->showModal = false;
-        $this->raw = null;
+        $this->raw_type = null;
     }
 
     public function closePhoto()
@@ -143,12 +143,12 @@ class Fashions extends Component
         $this->showModalPhoto = false;
     }
 
-    public function uplodeImage($productId)
+    public function uplodeImage($fashionId)
     {
-        $product = Fashion::find($productId);
-        $product
+        $fashion = Fashion::find($fashionId);
+        $fashion
             ->addMediaFromUrl($this->image->temporaryUrl())
-            ->usingName(str_slug($product->name).$product->media->count())
+            ->usingName(str_slug($fashion->name) . $fashion->media->count())
             ->usingFileName($this->image->getClientOriginalName())
             ->toMediaCollection('images');
         $this->showModal = false;
