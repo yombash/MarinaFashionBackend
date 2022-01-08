@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Livewire\Admin\Crud;
+namespace App\Http\Livewire\Admin\Crud\Category;
 
 use App\Models\Category;
 use Livewire\Component;
 use Livewire\WithPagination;
 
-class Categories extends Component
+class Listing extends Component
 {
 
     use WithPagination;
@@ -25,7 +25,7 @@ class Categories extends Component
 
     public function render()
     {
-        return view('livewire.admin.crud.categories', [
+        return view('livewire.admin.crud.category.listing', [
             'categories' => Category::query()->orderBy('position')->latest()
                 ->paginate(20)
         ]);
@@ -65,6 +65,13 @@ class Categories extends Component
     public function delete(Category $category)
     {
         if ($category) $category->delete();
+    }
+
+    public function updateOrder($list)
+    {
+        foreach($list as $item) {
+            Category::find($item['value'])->update(['position' => $item['order']]);
+        }
     }
 
 }

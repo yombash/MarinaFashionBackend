@@ -1,8 +1,8 @@
-<div class="col-xl-9 col-lg-8">
+<div class="col-xl-12 col-lg-8">
     <div class="row row-sm">
 
         @forelse ($templates as $template)
-            @if($template->fashions->first()->items->first()->products->first()->prices->first()->value >0)
+            @if($template->fashions->first()->items->first()->products->first()->prices->first()->value > 0)
                 <livewire:shop.catalog.card :template="$template"/>
             @endif
         @empty

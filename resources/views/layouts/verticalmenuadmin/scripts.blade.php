@@ -12,7 +12,7 @@
 		<script src="{{URL::asset('assets/plugins/ionicons/ionicons.js')}}"></script>
 
 		<!-- Moment js -->
-		<script src="{{URL::asset('assets/plugins/moment/moment.js')}}"></script>	
+		<script src="{{URL::asset('assets/plugins/moment/moment.js')}}"></script>
 
 		<!-- P-scroll js -->
 		<script src="{{URL::asset('assets/plugins/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
@@ -23,7 +23,7 @@
 
 		<!-- Rating js-->
 		<script src="{{URL::asset('assets/plugins/rating/jquery.rating-stars.js')}}"></script>
-		<script src="{{URL::asset('assets/plugins/rating/jquery.barrating.js')}}"></script>		
+		<script src="{{URL::asset('assets/plugins/rating/jquery.barrating.js')}}"></script>
 
 		<!-- Suggestion js-->
 		<script src="{{URL::asset('assets/plugins/suggestion/jquery.input-dropdown.js')}}"></script>

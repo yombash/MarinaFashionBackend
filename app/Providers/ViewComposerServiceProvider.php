@@ -38,6 +38,11 @@ class ViewComposerServiceProvider extends ServiceProvider
             $model->put('price',[
                 'admin.tables.price.web' => 'Интернет-магазин',
             ]);
+
+            $model->put('category',[
+                'admin.tables.category.binding' => 'Список товара'
+            ]);
+
             $view->with('main_menu',$model);
         });
 

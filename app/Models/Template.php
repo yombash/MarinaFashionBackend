@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Query\Builder;
 
 class Template extends Model
 {
@@ -24,6 +25,22 @@ class Template extends Model
     public function fashions()
     {
         return $this->hasMany(Fashion::class);
+    }
+
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class);
+    }
+
+    public static function search($searchArray)
+    {
+        return self::whereHas('fashions.items.products.offers')
+            ->with(['template_group','fashions.raws.raw_type'])
+            ->where(function ($q) use ($searchArray) {
+                foreach ($searchArray as $word)
+                    $q->orWhere('name', 'LIKE', '%' . $word . '%');
+            });
+
     }
 
 

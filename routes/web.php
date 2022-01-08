@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Routing\Router;
-use App\Http\Livewire\Index;
 
 /*
 |--------------------------------------------------------------------------
@@ -61,8 +60,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
         Route::group(['prefix' => 'category','as'=>'category.'], function () {
 
-            Route::view('list', 'admin.tables.price.web')->name('list');
-            Route::view('bind', 'admin.tables.price.web')->name('bind');
+            Route::view('listing', 'admin.tables.category.listing')->name('listing');
+            Route::view('binding', 'admin.tables.category.binding')->name('binding');
         });
 
     });
@@ -75,7 +74,15 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
 });
 
-Route::prefix('/')->name('shop.')->group(function () {
+// основное статическое меню
+Route::prefix('/')->name('main.')->group(function () {
+    Route::view('/', 'main.index')->name('index');
+    Route::view('contacts', 'main.contacts')->name('contacts');
+    Route::view('feedback', 'main.feedback')->name('feedback');
+});
+
+// интернет-магазин
+Route::prefix('shop')->name('shop.')->group(function () {
     Route::view('/', 'shop.index')->name('index');
     Route::view('basket', 'shop.basket')->name('basket');
 

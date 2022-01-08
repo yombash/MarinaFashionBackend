@@ -1,12 +1,12 @@
-@extends('layouts.app')
+@extends('layouts.app_vertical')
 
 @section('styles')
 
-    <!--Internal  Font Awesome -->
-    <link href="{{URL::asset('assets/plugins/fontawesome-free/css/all.min.css')}}" rel="stylesheet">
+{{--    <!--Internal  Font Awesome -->--}}
+{{--    <link href="{{URL::asset('assets/plugins/fontawesome-free/css/all.min.css')}}" rel="stylesheet">--}}
 
-    <!--Internal  Bootstrap -->
-    <link href="{{URL::asset('assets/plugins/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+{{--    <!--Internal  Bootstrap -->--}}
+{{--    <link href="{{URL::asset('assets/plugins/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">--}}
 
     <!--Internal  Nice-select css  -->
     <link href="{{URL::asset('assets/plugins/jquery-nice-select/css/nice-select.css')}}" rel="stylesheet"/>

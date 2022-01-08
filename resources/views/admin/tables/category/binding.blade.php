@@ -8,9 +8,6 @@
     <!--Internal  Bootstrap -->
     <link href="{{URL::asset('assets/plugins/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
 
-    <!--Internal  treeview -->
-    <link href="{{URL::asset('assets/plugins/treeview/treeview.css')}}" rel="stylesheet" type="text/css" />
-
 @endsection
 
 @section('breadcrumb')
@@ -37,12 +34,12 @@
                         Категории товаров на главной странице
                     </div>
                     <p class="mg-b-20 card-sub-title tx-12 text-muted">Заполните, пожалуйста, категории товаров</p>
-                    <div class="row">
                         <!-- col -->
-                        <div class="col-lg-4">
-                                <livewire:admin.crud.categories/>
-                        </div>
-                    </div>
+{{--                    <div class="row row-sm">--}}
+
+                                <livewire:admin.crud.category.binding/>
+
+{{--                    </div>--}}
                 </div>
             </div>
 
@@ -54,10 +51,5 @@
 
 @section('scripts')
 
-    <!--Internal  Perfect-scrollbar js -->
-    <script src="{{URL::asset('assets/plugins/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
-
-    <!-- Internal Treeview js -->
-    <script src="{{URL::asset('assets/plugins/treeview/treeview.js')}}"></script>
 
 @endsection

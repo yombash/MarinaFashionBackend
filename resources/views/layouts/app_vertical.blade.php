@@ -13,7 +13,7 @@
     <title> Marina -- Халаты и туники оптом </title>
 
     @include('layouts.verticalmenu.styles')
-
+    @livewireStyles
 </head>
 
 <body  class="main-body light-theme app sidebar-mini active leftmenu-color">
@@ -41,7 +41,7 @@
 
         </div>
         <!-- breadcrumb -->
-
+        <livewire:shop.catalog.search/>
         @yield('content')
 
     </div>
@@ -57,6 +57,6 @@
 @include('layouts.verticalmenu.footer')
 
 @include('layouts.verticalmenu.scripts')
-
+@livewireScripts
 </body>
 </html>

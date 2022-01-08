@@ -35,7 +35,7 @@ class Offers extends Component
             ->orderBy('name')->latest()
             ->paginate(20);
 
-        dd(Offer::offer_card($offers));
+//        dd(Offer::offer_card($offers));
 
         return view('livewire.admin.crud.offers', [
             'offers' => $offers,

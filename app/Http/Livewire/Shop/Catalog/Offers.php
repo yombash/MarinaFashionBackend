@@ -38,8 +38,10 @@ class Offers extends Component
 //            Template::query()
             ->allowedFilters([
                 AllowedFilter::exact('тип','template_group.gender.name'),
-                AllowedFilter::exact('категория','template_group.name'),
-                AllowedFilter::exact('материал','fashions.raws.raw_type.name')
+                AllowedFilter::exact('вид-продукции','template_group.name'),
+                AllowedFilter::exact('материал','fashions.raws.raw_type.name'),
+                AllowedFilter::exact('категория','categories.name'),
+                AllowedFilter::exact('модель','name'),
             ])
 //            ->allowedIncludes(['template_group'])
             ->whereHas('fashions.items.products.offers')

@@ -24,4 +24,21 @@ class RawType extends Model implements HasMedia
     {
         return $this->belongsTo(Mesure::class);
     }
+
+    public static function search($searchArray)
+    {
+        return self::whereHas('raws.fashions.items.products.offers')
+//            ->with(['template_group','fashions.raws.raw_type'])
+            ->where(function ($q) use ($searchArray) {
+                foreach ($searchArray as $word)
+                    $q->orWhere('name', 'LIKE', '%' . $word . '%');
+            });
+
+    }
+
+    public static function inOffers()
+    {
+        return self::whereHas('raws.fashions.items.products.offers');
+
+    }
 }

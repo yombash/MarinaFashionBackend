@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Shop\Catalog;
 
+use App\Models\Category;
 use App\Models\RawType;
 use App\Models\TemplateGroup;
 use Livewire\Component;
@@ -13,6 +14,7 @@ class Filter extends Component
     public $price = [];
     public $template_groups;
     public $raw_types;
+    public $categories;
 
     public function mount()
     {
@@ -24,6 +26,8 @@ class Filter extends Component
         $this->raw_types = RawType::query()
             ->whereHas('raws.fashions.items.products.offers')
             ->get();
+
+        $this->categories = Category::query()->whereHas('templates.fashions.items.products.offers')->orderBy('position')->get();
 //        $template_groups = TemplateGroup::query()
 //            ->whereHas('templates.fashions.items.products.offers')
 //            ->get();
