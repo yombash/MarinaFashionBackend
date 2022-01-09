@@ -21,6 +21,8 @@
                         <button wire:click.prevent="remove_mono_product({{ $item->id }})"
                                 class="btn btn-sm btn-warning">Убрать из одиночек</button>
                     @endif
+                    <button wire:click.prevent="create_multi_product({{ $item->id }})"
+                                class="btn btn-sm btn-primary">Создать комплект</button>
                     <button wire:click.prevent="delete({{ $item->id }})"
                             onclick="confirm('Вы уверены?') || event.stopImmediatePropagation()"
                             class="btn btn-sm btn-danger">Удалить</button>

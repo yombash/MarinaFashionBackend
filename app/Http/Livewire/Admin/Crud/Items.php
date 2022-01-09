@@ -111,6 +111,14 @@ class Items extends Component
         $item->products()->attach($product->id);
     }
 
+    public function create_multi_product(int $itemId)
+    {
+        dd($itemId);
+//        $item = Item::find($itemId);
+//        $product = Product::create();
+//        $item->products()->attach($product->id);
+    }
+
     public function remove_mono_product(int $itemId)
     {
         $item = Item::find($itemId);
