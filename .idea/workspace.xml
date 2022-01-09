@@ -5,54 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e2e29c61-eb9f-403d-b294-21e4a26119cc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Admin/Crud/Category/Binding.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Admin/Crud/Category/LinkedToTemplate.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Admin/Crud/Category/Listing.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Layout/Vertical/SideMenu.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Main/Index/TemplatesList.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Shop/Catalog/Search.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2022_01_04_163717_category_template.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/tables/category/listing.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/horizontalmenu/footer.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/horizontalmenu/horizontal-main.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/horizontalmenu/main-header.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/horizontalmenu/scripts.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/horizontalmenu/sidebar-right.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/horizontalmenu/styles.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/admin/crud/category/binding.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/admin/crud/category/linked-to-template.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/admin/crud/category/listing.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/admin/crud/price/filter.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/admin/crud/price/web.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/main/index/templates-list.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/shop/catalog/search.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/main/contacts.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/main/feedback.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/main/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Admin/Constructor/MultiProduct.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/livewire/admin/constructor/multi-product.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Admin/Crud/Categories.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Admin/Crud/Categories.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Admin/Crud/Offers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Admin/Crud/Offers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Shop/Catalog/Filter.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Shop/Catalog/Filter.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Shop/Catalog/Offers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Shop/Catalog/Offers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/RawType.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/RawType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Template.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Template.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/TemplateGroup.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/TemplateGroup.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/ViewComposerServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/ViewComposerServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/tables/categories.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/tables/category/binding.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app_vertical.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app_vertical.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/verticalmenuadmin/main-sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/verticalmenuadmin/main-sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/verticalmenuadmin/scripts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/verticalmenuadmin/scripts.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/admin/crud/categories.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/shop/catalog/filter.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/shop/catalog/filter.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/shop/catalog/offers.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/shop/catalog/offers.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/shop/basket.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/shop/basket.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/shop/checkout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/shop/checkout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/shop/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/shop/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/shop/offer/details.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/shop/offer/details.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -306,7 +262,7 @@
       <workItem from="1634050517627" duration="2027000" />
       <workItem from="1641189642359" duration="13000" />
       <workItem from="1641292020753" duration="660000" />
-      <workItem from="1641294830068" duration="89703000" />
+      <workItem from="1641294830068" duration="91754000" />
     </task>
     <task id="LOCAL-00001" summary="Админка в процессе">
       <created>1623364992295</created>
@@ -322,7 +278,21 @@
       <option name="project" value="LOCAL" />
       <updated>1641302060706</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Каталог v0.1 готов">
+      <created>1641657040183</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1641657040183</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Bugfix">
+      <created>1641719527161</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1641719527161</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -331,7 +301,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Админка в процессе" />
     <MESSAGE value="Админка в процессе_2022-01-04" />
-    <option name="LAST_COMMIT_MESSAGE" value="Админка в процессе_2022-01-04" />
+    <MESSAGE value="Каталог v0.1 готов" />
+    <MESSAGE value="Bugfix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bugfix" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
