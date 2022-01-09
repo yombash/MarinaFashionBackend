@@ -30,7 +30,7 @@
 
     <!-- row -->
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12 col-lg-12">
             <div class="card mg-b-20">
                 <div class="card-body">
                     <div class="main-content-label mg-b-5">
@@ -39,7 +39,7 @@
                     <p class="mg-b-20 card-sub-title tx-12 text-muted">Заполните, пожалуйста, список видов сырья</p>
                     <div class="row">
                         <!-- col -->
-                        <div class="col-lg-4">
+                        <div class="col-lg-12">
                                 <livewire:admin.crud.raw-types/>
                         </div>
                     </div>

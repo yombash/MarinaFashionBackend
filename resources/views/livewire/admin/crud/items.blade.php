@@ -1,40 +1,53 @@
 <div>
     <a wire:click.prevent="create" href="#" class="btn btn-primary">Добавить новый</a>
-    <table class="table mt-4">
-        <thead>
-        <tr>
-            <th>Наименование</th>
-            <th></th>
-        </tr>
-        </thead>
-        <tbody>
-        @forelse ($items as $item)
-            <tr>
-                <td nowrap=""><h6> Размер
-                            №{{$item->size->name}}</h6>
-                </td>
-                <td nowrap="">
-                    @if(count($item->products)==0)
-                    <button wire:click.prevent="insert_mono_product({{ $item->id }})"
-                            class="btn btn-sm btn-success">Сделать одиночкой</button>
-                    @else
-                        <button wire:click.prevent="remove_mono_product({{ $item->id }})"
-                                class="btn btn-sm btn-warning">Убрать из одиночек</button>
-                    @endif
-                    <button wire:click.prevent="create_multi_product({{ $item->id }})"
-                                class="btn btn-sm btn-primary">Создать комплект</button>
-                    <button wire:click.prevent="delete({{ $item->id }})"
-                            onclick="confirm('Вы уверены?') || event.stopImmediatePropagation()"
-                            class="btn btn-sm btn-danger">Удалить</button>
-                </td>
-            </tr>
-        @empty
-            <tr>
-                <td colspan="3">Не найдено ни одной модели в БД</td>
-            </tr>
-        @endforelse
-        </tbody>
-    </table>
+    <div class="row">
+        <div class="card mg-t-50 p-5">
+            @if ($items->first()->fashion->media)
+                    <img height="200" src="{{$items->first()->fashion->getMedia('images')->first()->getUrl()}}">
+            @endif
+        </div>
+        <div class="card">
+            <table class="table mt-4">
+                <thead>
+                <tr>
+                    <th>Наименование</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                @forelse ($items as $item)
+                    <tr>
+                        <td nowrap=""><h6> Размер
+                                №{{$item->size->name}}</h6>
+                        </td>
+                        <td nowrap="">
+                            @if(count($item->products)==0)
+                                <button wire:click.prevent="insert_mono_product({{ $item->id }})"
+                                        class="btn btn-sm btn-success">Сделать одиночкой
+                                </button>
+                            @else
+                                <button wire:click.prevent="remove_mono_product({{ $item->id }})"
+                                        class="btn btn-sm btn-warning">Убрать из одиночек
+                                </button>
+                            @endif
+                            <button wire:click.prevent="create_multi_product({{ $item->id }})"
+                                    class="btn btn-sm btn-primary">Создать комплект
+                            </button>
+                            <button wire:click.prevent="delete({{ $item->id }})"
+                                    onclick="confirm('Вы уверены?') || event.stopImmediatePropagation()"
+                                    class="btn btn-sm btn-danger">Удалить
+                            </button>
+                        </td>
+                    </tr>
+                @empty
+                    <tr>
+                        <td colspan="3">Не найдено ни одной модели в БД</td>
+                    </tr>
+                @endforelse
+                </tbody>
+            </table>
+        </div>
+    </div>
 
     {{ $items->links() }}
 
@@ -55,11 +68,11 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <h6 >В привязке к фасону: {{$parentName}}</h6>
+                        <h6>В привязке к фасону: {{$parentName}}</h6>
                         <label for="raws">Наименование:</label>
                         <br/>
                         <select wire:model.prevent="product.size_id" class="form-control" id="raws">
-                            <option hidden>-- Выберите размер -- </option>
+                            <option hidden>-- Выберите размер --</option>
                             @forelse($sizes as $size)
                                 <option value="{{$size->id}}">{{$size->name}}</option>
                             @empty

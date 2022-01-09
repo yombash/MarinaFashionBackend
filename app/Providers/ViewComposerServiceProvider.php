@@ -30,7 +30,7 @@ class ViewComposerServiceProvider extends ServiceProvider
             $model = new Collection();
             $model->put('tables',[
                 'admin.tables.brands' => 'Брэнды',
-                'admin.tables.raw_types' => 'Тип материала',
+                'admin.tables.raw-types' => 'Тип материала',
                 'admin.tables.sizes' => 'Размеры продукции',
                 'admin.tables.genders' => 'Образ покупателя (пол)',
                 'admin.tables.offers' => 'Товарные предложения',

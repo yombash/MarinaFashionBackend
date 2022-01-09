@@ -20,7 +20,7 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{url('admin')}}">Главная</a></li>
                 <li class="breadcrumb-item">
-                    <a href="{{url('admin/tables/raw_types')}}">{{$model_parent[0]->name}}</a>
+                    <a href="{{url('admin/tables/raw-types')}}">{{$model_parent[0]->name}}</a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">Экземпляры сырья</li>
             </ol>

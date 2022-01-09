@@ -55,7 +55,7 @@
                         {{$parent_name}}</p>
                     <div class="row">
                         <!-- col -->
-                        <div class="col-lg-4">
+                        <div class="col-lg-12">
                                 <livewire:admin.crud.items :parent-id="$model_parent[0]->id"
                                                                    :parent-name="$parent_name"/>
                         </div>

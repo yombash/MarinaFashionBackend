@@ -9,7 +9,7 @@
     <link href="{{URL::asset('assets/plugins/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
 
     <!--Internal  treeview -->
-    <link href="{{URL::asset('assets/plugins/treeview/treeview.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{URL::asset('assets/plugins/treeview/treeview.css')}}" rel="stylesheet" type="text/css"/>
 
 @endsection
 
@@ -19,14 +19,7 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{url('admin')}}">Главная</a></li>
-                <li class="breadcrumb-item">
-                    <a href="{{url('admin/tables/genders')}}">{{$model_parent[0]->gender->name}}</a>
-                </li>
-                <li class="breadcrumb-item">
-                    <a href="{{url('admin/tables/template_groups/'.$model_parent[0]->gender->id)
-                    }}">{{$model_parent[0]->name}}</a>
-                </li>
-                <li class="breadcrumb-item active" aria-current="page">Шаблоны изделий</li>
+                <li class="breadcrumb-item active" aria-current="page">Конструктор комплектов</li>
             </ol>
         </nav>
     </div>
@@ -41,15 +34,15 @@
             <div class="card mg-b-20">
                 <div class="card-body">
                     <div class="main-content-label mg-b-5">
-                        Шаблоны (модели) изделий
+                        Конструктор комплекта
                     </div>
-                    <p class="mg-b-20 card-sub-title tx-12 text-muted">в привязке к группе шаблонов:
-                      {{$model_parent[0]->gender->name}} / {{$model_parent[0]->name}}</p>
+                    <p class="mg-b-20 card-sub-title tx-12 text-muted">
+                        Пожалуйста, выберите наименования для формирования комплекта
+                    </p>
                     <div class="row">
                         <!-- col -->
                         <div class="col-lg-12">
-                                <livewire:admin.crud.templates :parent-id="$model_parent[0]->id"
-                                                                   :parent-name="$model_parent[0]->name"/>
+                            <livewire:admin.constructor.multi-product/>
                         </div>
                     </div>
                 </div>

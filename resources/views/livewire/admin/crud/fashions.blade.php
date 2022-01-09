@@ -23,7 +23,7 @@
                             №{{$fashion->id}}</a></h6>
                     @if ($fashion->media)
                         @foreach($fashion->getMedia('images') as $image)
-                            <li><img src="{{$image->getUrl('thumb')}}">
+                            <li><img height="200" class="mg-10" src="{{$image->getUrl()}}">
                                 <button wire:click.prevent="deleteImage({{ $image->id }})"
                                         onclick="confirm('Вы уверены?') || event.stopImmediatePropagation()"
                                         class="btn btn-sm btn-danger">Удалить фото
@@ -58,7 +58,7 @@
                     <div class="modal-header">
                         <h5 class="modal-title">{{ $fashionId ? 'Редактирование' : 'Добавление нового фасона'
                         }}
-                            <a wire:click="close" href="{{route('admin.tables.raw_types')}}" class="btn btn-primary"
+                            <a wire:click="close" href="{{route('admin.tables.raw-types')}}" class="btn btn-primary"
                                onclick="return confirm
                             ('Перейти в форму добавления новых метериалов?');" target="_blank">Добавить новый
                                 материал (если нет в списке)</a>

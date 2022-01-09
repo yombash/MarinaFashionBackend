@@ -43,16 +43,17 @@ class Items extends Component
 
         return view('livewire.admin.crud.items', [
             'items' => Item::query()
-                ->where('fashion_id','=',$this->parentId)
+                ->where('fashion_id', '=', $this->parentId)
                 ->with([
                     'products',
-                    'size' => function($query){
+                    'fashion.media',
+                    'size' => function ($query) {
                         $query->orderBy('name');
                     }
                 ])
                 ->latest()
                 ->paginate(20),
-            'sizes'  =>  Size::query()
+            'sizes' => Size::query()
                 ->orderBy('name')
                 ->get()
         ]);
@@ -68,7 +69,7 @@ class Items extends Component
     public function create()
     {
         $this->showModal = true;
-        $this->product = [ 'fashion_id' => $this->parentId ];
+        $this->product = ['fashion_id' => $this->parentId];
         $this->productId = null;
     }
 
@@ -79,13 +80,12 @@ class Items extends Component
         $this->validate();
 
 
-
         if (!is_null($this->productId)) {
             $this->product->save();
         } else {
-                $item = Item::create($this->product);
-                $product = Product::create();
-                $item->products()->attach($product->id);
+            $item = Item::create($this->product);
+            $product = Product::create();
+            $item->products()->attach($product->id);
         }
         $this->showModal = false;
         $this->size = null;
@@ -113,21 +113,19 @@ class Items extends Component
 
     public function create_multi_product(int $itemId)
     {
-        dd($itemId);
-//        $item = Item::find($itemId);
-//        $product = Product::create();
-//        $item->products()->attach($product->id);
+        $this->redirectRoute('admin.constructor.multi-product', [
+            'itemId' => $itemId
+        ]);
     }
 
     public function remove_mono_product(int $itemId)
     {
         $item = Item::find($itemId);
-        foreach($item->products as $product)
-        {
+        foreach ($item->products as $product) {
             DB::transaction(function () use ($product) {
                 $product->items()->detach();
                 $product->delete();
-                });
+            });
 
         }
     }

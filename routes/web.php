@@ -19,7 +19,7 @@ use Illuminate\Routing\Router;
 Route::prefix('admin')->name('admin.')->group(function () {
 //    $route->get('/', 'Admin\IndexController@index');
     Route::view('/', 'admin.index');
-    Route::group(['prefix' => 'tables','as'=>'tables.'], function () {
+    Route::group(['prefix' => 'tables', 'as' => 'tables.'], function () {
 //        $route->get('templates', 'Admin\TablesController@templates');
 
         // бренды
@@ -29,7 +29,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::view('genders', 'admin.tables.genders')->name('genders');
 
         // виды тканей: кулирка, вэлсофт
-        Route::view('raw_types', 'admin.tables.raw_types')->name('raw_types');
+        Route::view('raw-types', 'admin.tables.raw-types')->name('raw-types');
 
         // размеры изделий
         Route::view('sizes', 'admin.tables.sizes')->name('sizes');
@@ -52,13 +52,13 @@ Route::prefix('admin')->name('admin.')->group(function () {
         // продукты изделий: размеры фасонов
         Route::get('items/{parent_id}', 'Admin\TablesController@items');
 
-        Route::group(['prefix' => 'price','as'=>'price.'], function () {
+        Route::group(['prefix' => 'price', 'as' => 'price.'], function () {
 
             // прайс-лист интернет-магазина
             Route::view('web', 'admin.tables.price.web')->name('web');
         });
 
-        Route::group(['prefix' => 'category','as'=>'category.'], function () {
+        Route::group(['prefix' => 'category', 'as' => 'category.'], function () {
 
             Route::view('listing', 'admin.tables.category.listing')->name('listing');
             Route::view('binding', 'admin.tables.category.binding')->name('binding');
@@ -66,9 +66,10 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
     });
 
-    Route::group(['prefix' => 'constructors'], function (Router $route) {
+    Route::prefix('constructor')->name('constructor.')->group(function () {
         // товарные предложения
-        $route->view('offer/{offerId}', 'admin.constructors.offer');
+        Route::view('offer', 'admin.constructor.offer')->name('offer');
+        Route::view('multi-product', 'admin.constructor.multi-product', ['itemId'])->name('multi-product');
 
     });
 
